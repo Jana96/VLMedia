@@ -1,0 +1,224 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video, iframe[src*="slideshare.net"], iframe[src*="youtube.com"],
+iframe[src*="youtu.be"], iframe[src*="player.vimeo.com"] {
+	border: 0 none;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+*, *::before, *::after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* --------------------------------------------------*/
+
+html {
+	font-size: 18px;
+	font-family: Arial;
+}
+
+body {
+	background-color: #fff;
+	height: 100vh;
+	display: flex;
+  	flex-direction: column;
+  	max-width: 1920px;
+  	margin: 0 auto;
+}
+
+header {
+	padding: 45px 4% 20px;
+	color: #fff;
+}
+
+header,
+main,
+footer {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.logo {
+	display: inline-block;
+	float: left;
+	text-decoration: none;
+	font-size: 2em;
+	color: #000;
+	font-weight: bold;
+}
+
+#search-form {
+	display: flex;
+	margin: 0 40px;
+	position: relative;
+	float: left;
+	width: 45%;
+}
+
+#search-form label {
+	display: none;
+}
+
+#search-form input[type="search"] {
+	width: 100%;
+	border: 1px solid #000;
+	padding: 10px 45px 10px 10px;
+	background-color: #ddd;
+}
+
+#search-form .genericons-neue-search {
+	padding: 5px;
+	margin-left: -38px;
+	z-index: 40;
+	color: #000;
+	font-size: 1.5em;
+}
+
+#autocomplete {
+  	border: 1px solid silver;
+  	outline: none;
+  	margin: 0;
+  	background: #fff;
+}
+
+#autocomplete_result {
+  	border: 1px solid #000;
+  	border-top: 0;
+  	position: absolute;
+  	overflow: auto;
+  	background: #fff;
+  	top: 39px;
+  	display: none;
+  	z-index: 100;
+}
+
+#autocomplete, #autocomplete_result {
+  	width: 100%;
+}
+
+#autocomplete, #autocomplete_result p {
+	padding: 5px 10px;
+  	margin: 0;
+  	color: #000;
+}
+
+#autocomplete_result p:hover {
+	background: #e5e5e5;
+}
+
+main {
+	flex-basis: auto;
+	flex-grow: 1;
+	flex-shrink: 0;
+	background-color: #ddd;
+}
+
+.wrapper {
+	display: grid;
+  	grid-gap: 10px;
+  	grid-template-columns: 1fr 1fr 1fr 1fr;
+  	grid-auto-rows: auto;
+  	grid-auto-flow: row dense;
+  	padding: 10px;
+}
+
+.wrapper > div {
+	background-color: #0244bd;
+	transition: transform 0.3s ease-in-out;
+	display: inherit;
+}
+
+.one {
+  	grid-column: 1;
+  	grid-row: 1;
+}
+
+.two { 
+  	grid-column: 2;
+  	grid-row: 1;
+}
+
+.three {
+  	grid-column: 3;
+  	grid-row: 1;
+}
+
+.four {
+  	grid-column: 4;
+  	grid-row: 1 / 3;
+}
+
+.five {
+  	grid-column: 1;
+  	grid-row: 2;
+}
+
+.six {
+  	grid-column: 2 / 4;
+  	grid-row: 2;
+}
+
+.wrapper > div img {
+	max-width: 100%;
+	height: auto;
+}
+
+.wrapper > div:hover {
+	overflow: visible;
+	z-index: 50;
+	transform: scale(1.25);
+}
+
+footer {
+	flex: none;
+	padding: 20px 0;
+	position: relative;
+}
+
+/* ---------------------------------------------- */
+/* RWD */
+
+@media only screen and (max-width: 1024px) {
+    
+    .wrapper {
+    	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    	grid-auto-rows: 250px;
+    }
+
+    .wrapper > div {
+		transition: unset;
+		display: inline-flex;
+	}
+
+	.wrapper > div:hover {
+		transform: none;
+		overflow: hidden;
+	}
+
+	.four {
+	  	grid-column: 1 / 4;
+	  	grid-row: 2;
+	}
+
+	.five {
+	  	grid-column: 1;
+	  	grid-row: 3;
+	}
+
+	.six {
+	  	grid-column: 2 / 4;
+	  	grid-row: 3;
+	}	
+  	
+}
+/* ---------------------------------------------- */
